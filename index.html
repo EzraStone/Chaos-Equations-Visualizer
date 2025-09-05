@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chaos Equations Visualizer</title>
+  <link rel="stylesheet" href="style.css?v=4">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div id="entireBody">
+    <div class="wrapper">
+
+
+      <!-- 3D system selector -->
+      <div id="threeD-container">
+        <label for="system-select-3d">Select system:</label>
+        <select id="system-select-3d">
+          <option value="lorenz">Lorenz System</option>
+          <option value="dequanLi">Dequan-Li Attractor</option>
+          <option value="chenLee">Chen-Lee Attractor</option>
+          <option value="aizawa">Aizawa Attractor</option>
+
+          <option value="halvorsen">Halvorsen System</option>
+          <option value="newton">Newton-Leipnik System</option>
+          <option value="thomas">Thomas System</option>
+          <option value="lu">L&uuml Attractor</option>
+          <option value="chen">Chen Attractor</option>
+          <option value="dadras">Dadras System</option>
+                     <option value="rossler">R&oumlssler System</option>
+           <option value="hoover">Nos&eacute-Hoover Oscillator</option>
+
+          <option value="shimizu">Shimizu-Morioka System</option>
+          <option value="threeScroll">Three-Scroll Attractor</option>
+          <option value="arneodo">Arneodo-Coullet System</option>
+        </select>
+      </div>
+
+             <div class="canvas-container">
+         <canvas id="canvas3d"></canvas>
+       </div>
+       
+       <!-- Help button -->
+       <div id="help-button">
+         <button id="help-btn">?</button>
+       </div>
+       
+       <!-- Help modal -->
+       <div id="help-modal" class="modal">
+         <div class="modal-content">
+           <span class="close">&times;</span>
+           <h2>Controls</h2>
+           <ul>
+             <li><strong>Mouse:</strong> Click and drag to rotate the view</li>
+             <li><strong>Scroll:</strong> Zoom in and out</li>
+             <li><strong>Right-click + drag:</strong> Pan the view</li>
+             <li><strong>System Selector:</strong> Choose different chaotic systems from the dropdown</li>
+           </ul>
+         </div>
+       </div>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.module.js",
+        "three/examples/jsm/controls/TrackballControls.js": "https://cdn.jsdelivr.net/npm/three@0.153.0/examples/jsm/controls/TrackballControls.js"
+      }
+    }
+  </script>
+  <script type="module" src="main.js?v=13"></script>
+  
+  <!-- Simple keyboard test -->
+  <script>
+    console.log("Keyboard test script loaded");
+    document.addEventListener("keydown", function(event) {
+      console.log("Test: Key pressed:", event.key);
+    });
+  </script>
+</body>
+</html>
